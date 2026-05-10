@@ -35,7 +35,7 @@
     .error-msg { color: #c62828; margin-top: 0.5rem; font-weight: bold; }
     .footer-note { margin-top: 2rem; font-size: 0.75rem; color: #aaa; text-align: center; border-top: 1px solid #eee; padding-top: 1rem; }
 
-    /* Panel principal (sin cambios visuales relevantes) */
+    /* Panel principal */
     .main-panel { display: none; padding: 2rem; max-width: 1100px; margin: 0 auto; }
     .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; }
     .header h2 { color: #004d40; }
@@ -91,7 +91,7 @@
   <div class="access-card">
     <h1>MULTIESTUDIOS</h1>
     <div class="sub">Centro de Educación Continua</div>
-    <div class="lema">Tutor Inteligente para Postulantes a Especialistas de la Policía Nacional en el arquitectura, ingeniería informatica y administración de empresas</div>
+    <div class="lema">Tutor Inteligente para Postulantes a Especialistas de la Policía Nacional en Administración de Empresas, Ingeniería Informática y Arquitectura</div>
     
     <input type="text" id="cedulaInput" placeholder="Número de cédula" />
     <select id="carreraSelect">
@@ -159,7 +159,7 @@
 </a>
 
 <script>
-  // ==================== CONFIGURACIÓN API (sin cambios) ====================
+  // ==================== CONFIGURACIÓN API ====================
   const API_KEY = 'sk-5be59b1373ae48dfb7a39e9b2e5b5a46';
   const API_URL = 'https://api.deepseek.com/v1/chat/completions';
   const MODEL = 'deepseek-chat';
@@ -331,46 +331,46 @@
     ]
   };
 
-  // ==================== CASOS PRECARGADOS PARA CADA CARRERA ====================
+  // ==================== CASOS PRECARGADOS (SIN ALUCINACIONES Y CON DOCTRINA POLICIAL) ====================
   const CASOS_BANK = {
     'Administración de Empresas': {
-      enunciado: "La Dirección Nacional de Logística requiere optimizar el proceso de adquisición de 10.000 chalecos antibalas. Hay dos proveedores precalificados. Usted debe diseñar una subasta inversa electrónica conforme a la LOSNCP, establecer criterios de evaluación técnica y elaborar una matriz de ponderación. Además, debe prever un plan de contingencia ante posibles ofertas anormalmente bajas.",
+      enunciado: "La Dirección Nacional de Logística requiere optimizar el proceso de adquisición de 10.000 chalecos antibalas. Hay dos proveedores precalificados. Usted debe diseñar una subasta inversa electrónica conforme a la LOSNCP, establecer criterios de evaluación técnica y elaborar una matriz de ponderación. Además, debe prever un plan de contingencia ante posibles ofertas anormalmente bajas, integrando la doctrina policial de autogestión y transparencia.",
       preguntas: [
-        "1. ¿Cuáles son los pasos formales para declarar desierta una subasta inversa?",
+        "1. ¿Cuáles son los pasos formales para declarar desierta una subasta inversa? (Describa el procedimiento según la LOSNCP, evite números de artículo inexactos).",
         "2. Proponga un sistema de puntuación técnica (70%) y económica (30%) con indicadores verificables.",
-        "3. Explique cómo evitar la corrupción en la recepción de los chalecos, mencionando la normativa de control interno."
+        "3. Explique cómo evitar la corrupción en la recepción de los chalecos, mencionando principios de control interno y doctrina policial."
       ],
-      solucion: "Solución técnica:\n1. La subasta se declara desierta si no se reciben ofertas, todas son rechazadas o el precio supera el presupuesto referencial (LOSNCP art. 52). Se debe emitir resolución motivada y reiniciar el proceso.\n2. Puntuación técnica: certificado ISO 9001 (10 pts), muestras aprobadas por laboratorio (20 pts), tiempo de entrega (15 pts), garantía extendida (15 pts). Económica: menor precio obtiene 30 pts, los demás mediante fórmula de proporcionalidad inversa.\n3. Para evitar corrupción: conformar comisión de recepción con veeduría ciudadana, aplicar plan de muestreo según INEN 2859, documentar cada lote con acta y fotografías, y registrar en el sistema de gestión documental. Adicionalmente, se debe reportar a la Contraloría cualquier irregularidad."
+      solucion: "Solución técnica:\n1. La subasta se declara desierta si no se reciben ofertas, todas son rechazadas o el precio supera el presupuesto referencial. Se debe emitir resolución motivada y reiniciar el proceso. Se recomienda consultar el procedimiento detallado en la LOSNCP y su reglamento vigente.\n2. Puntuación técnica: certificado ISO 9001 (10 pts), muestras aprobadas por laboratorio acreditado (20 pts), tiempo de entrega (15 pts), garantía extendida (15 pts). Económica: menor precio obtiene 30 pts, los demás mediante fórmula de proporcionalidad inversa.\n3. Para evitar corrupción: conformar comisión de recepción con veeduría ciudadana, aplicar plan de muestreo según normas INEN (consultar catálogo vigente), documentar cada lote con acta y fotografías, y registrar en el sistema de gestión documental. Se aplica la doctrina de autogestión: capacitar al personal en integridad y crear canales de denuncia anónimos."
     },
     'Ingeniería Informática': {
-      enunciado: "Se requiere desarrollar un sistema de gestión de novedades policiales (SGN-P) para 2.000 usuarios concurrentes. El sistema debe integrarse con el Registro Civil y el sistema de expedientes judiciales. Usted lidera el equipo técnico. Se dispone de presupuesto limitado para infraestructura en la nube.",
+      enunciado: "Se requiere desarrollar un sistema de gestión de novedades policiales (SGN-P) para 2.000 usuarios concurrentes. El sistema debe integrarse con el Registro Civil y el sistema de expedientes judiciales. Usted lidera el equipo técnico. Se dispone de presupuesto limitado para infraestructura en la nube. Debe aplicar principios de seguridad operativa y autogestión en el desarrollo.",
       preguntas: [
         "1. ¿Qué arquitectura de software (microservicios o monolítica) recomienda y por qué?",
-        "2. Describa las medidas de seguridad para garantizar la confidencialidad de los datos (cifrado, autenticación).",
-        "3. ¿Cómo implementaría la interoperabilidad con servicios REST del Registro Civil? Enumere estándares necesarios."
+        "2. Describa las medidas de seguridad para garantizar la confidencialidad de los datos (cifrado, autenticación), alineadas con la normativa ecuatoriana de protección de datos.",
+        "3. ¿Cómo implementaría la interoperabilidad con servicios REST del Registro Civil? Enumere estándares necesarios y medidas de control de acceso."
       ],
-      solucion: "Solución técnica:\n1. Arquitectura de microservicios es más adecuada por escalabilidad independiente de módulos (autenticación, novedades, integraciones) y tolerancia a fallos. Aunque inicialmente más compleja, permite adaptarse a picos de demanda.\n2. Autenticación multifactor (MFA) + OAuth2, cifrado TLS 1.3 en tránsito, cifrado AES-256 en reposo de base de datos. Auditoría de accesos y logs inmutables.\n3. Estándares: JSON, API REST con autenticación Bearer Token, documentación OpenAPI. Para integración síncrona, se usarán endpoints GET/POST; asíncrona con colas (RabbitMQ). Se debe firmar digitalmente cada petición con certificado emitido por la autoridad certificadora del Estado."
+      solucion: "Solución técnica:\n1. Arquitectura de microservicios es más adecuada por escalabilidad independiente de módulos (autenticación, novedades, integraciones) y tolerancia a fallos. Aunque inicialmente más compleja, permite adaptarse a picos de demanda y facilita el mantenimiento autónomo por parte del equipo policial (autogestión).\n2. Autenticación multifactor (MFA) + OAuth2, cifrado TLS 1.3 en tránsito, cifrado AES-256 en reposo de base de datos. Auditoría de accesos y logs inmutables. Cumplir con la Ley Orgánica de Protección de Datos (LOPDP) ecuatoriana.\n3. Estándares: JSON, API REST con autenticación Bearer Token, documentación OpenAPI. Para integración síncrona, usar endpoints GET/POST; asíncrona con colas (RabbitMQ). Firmar digitalmente cada petición con certificado emitido por la autoridad certificadora del Estado. Implementar throttling y logging centralizado para seguridad operativa."
     },
     'Arquitectura': {
-      enunciado: "La Policía Nacional planea construir un nuevo Centro de Comando y Control (C4) en la ciudad de Quito, zona de alta sismicidad. El terreno tiene 5.000 m² con pendiente del 15%. Se requiere un edificio de 3 pisos, con sótano para estacionamiento blindado y helipuerto en azotea. El presupuesto es ajustado y debe cumplir la normativa NEC 2023.",
+      enunciado: "La Policía Nacional planea construir un nuevo Centro de Comando y Control (C4) en la ciudad de Quito, zona de alta sismicidad. El terreno tiene 5.000 m² con pendiente del 15%. Se requiere un edificio de 3 pisos, con sótano para estacionamiento blindado y helipuerto en azotea. El presupuesto es ajustado y debe cumplir la normativa NEC (NTE INEN) vigente. Integre la doctrina de seguridad operativa en el diseño.",
       preguntas: [
         "1. ¿Qué tipo de cimentación recomendaría? Justifique con base en la pendiente y el riesgo sísmico.",
         "2. Proponga un sistema constructivo que acelere el cronograma y reduzca costos sin sacrificar seguridad.",
-        "3. ¿Cuáles son los requisitos de accesibilidad universal que debe incorporar? Mencione al menos tres."
+        "3. ¿Cuáles son los requisitos de accesibilidad universal que debe incorporar? Mencione al menos tres basados en la normativa ecuatoriana."
       ],
-      solucion: "Solución técnica:\n1. Cimentación mixta: pilotes de hormigón armado hincados hasta estrato rocoso (debido a pendiente y posible licuación) combinados con losa de cimentación rigidizadora. Los pilotes evitan asentamientos diferenciales.\n2. Sistema constructivo de paneles modulares de acero liviano con núcleos de hormigón en zonas críticas (cajas de escaleras). Esto acelera montaje y reduce mano de obra. Se debe garantizar arriostramiento sismorresistente.\n3. Rampas con pendiente ≤ 8% en ingresos, puertas de ancho mínimo 90 cm, señalética podotáctil y baños adaptados (norma NEC-11). Además, al menos un ascensor accesible para personas con movilidad reducida."
+      solucion: "Solución técnica:\n1. Cimentación mixta: pilotes de hormigón armado hincados hasta estrato rocoso (debido a pendiente y posible licuación) combinados con losa de cimentación rigidizadora. Los pilotes evitan asentamientos diferenciales y mejoran la respuesta sísmica.\n2. Sistema constructivo de paneles modulares de acero liviano con núcleos de hormigón en zonas críticas (cajas de escaleras). Esto acelera montaje y reduce mano de obra. Se debe garantizar arriostramiento sismorresistente según la NEC vigente. La autogestión se aplica capacitando al personal policial en mantenimiento básico de la envolvente.\n3. Rampas con pendiente ≤ 8% en ingresos, puertas de ancho mínimo 90 cm, señalética podotáctil y baños adaptados (norma NEC-11 y NTE INEN accesibilidad). Además, al menos un ascensor accesible para personas con movilidad reducida. La seguridad operativa incluye rutas de evacuación claras y zonas de reunión protegidas."
     }
   };
 
-  // Caso de muestra adicional (independiente del login)
+  // Caso de muestra adicional (independiente del login) – SIN alucinaciones
   const SAMPLE_CASE = {
-    enunciado: "Ejemplo de caso práctico para Arquitectura: Diseño de un consultorio médico policial de 120 m² en una comisaría rural de la Amazonía. Debe contar con área de espera, consulta, procedimientos menores y generación de residuos infecciosos.",
+    enunciado: "Ejemplo de caso práctico para Arquitectura: Diseño de un consultorio médico policial de 120 m² en una comisaría rural de la Amazonía. Debe contar con área de espera, consulta, procedimientos menores y generación de residuos infecciosos. Integre principios de autogestión y seguridad operativa.",
     preguntas: [
       "1. ¿Qué consideraciones de ventilación y climatización pasiva recomienda para la Amazonía?",
       "2. Proponga una distribución espacial que garantice flujos separados (personal sanitario / policías detenidos).",
       "3. Mencione tres materiales de construcción sostenibles y de bajo costo adecuados a la humedad."
     ],
-    solucion: "Respuesta técnica resumida:\n1. Ventilación cruzada mediante celosías altas, orientación este-oeste para evitar ganancia solar excesiva, uso de sobretechos de madera tratada con extractores eólicos pasivos.\n2. Zonificación: ingreso independiente para público, circuito cerrado para detenidos con acceso directo a celda de custodia, área de servicio con vestidores. Pasillo interno con barrera sanitaria.\n3. Bambú tratado (guadua) para estructura secundaria, paneles de cemento de cáñamo y tejas de plástico reciclado. Todo con tratamiento anticorrosivo por alta humedad."
+    solucion: "Respuesta técnica resumida:\n1. Ventilación cruzada mediante celosías altas, orientación este-oeste para evitar ganancia solar excesiva, uso de sobretechos de madera tratada con extractores eólicos pasivos.\n2. Zonificación: ingreso independiente para público, circuito cerrado para detenidos con acceso directo a celda de custodia, área de servicio con vestidores. Pasillo interno con barrera sanitaria. La seguridad operativa se logra con recorridos controlados y visibilidad desde el puesto de control.\n3. Bambú tratado (guadua) para estructura secundaria, paneles de cemento de cáñamo y tejas de plástico reciclado. Todo con tratamiento anticorrosivo por alta humedad. Se fomenta la autogestión con manuales de mantenimiento para el personal policial."
   };
 
   let currentUser = null;
@@ -478,10 +478,19 @@
       const indiceAleatorio = Math.floor(Math.random() * temas.length);
       const temaSeleccionado = temas[indiceAleatorio];
 
-      const prompt = `Eres un experto evaluador de la Policía Nacional del Ecuador. Genera un caso práctico para un especialista en ${currentUser.carrera}. El caso debe centrarse EXCLUSIVAMENTE en el siguiente tema del temario:\n\n"${temaSeleccionado}"\n\nCombina la especialidad con doctrina policial, administración pública ecuatoriana (LOSNCP) y pensamiento crítico. Proporciona un contexto operacional realista, 3 preguntas técnicas y la respuesta técnica detallada. La respuesta debe ser detallada pero no exceder 500 palabras. Devuelve JSON con: "enunciado", "preguntas" (array de strings), "solucion".`;
+      const prompt = `Eres un experto evaluador de la Policía Nacional del Ecuador. Genera un caso práctico para un especialista en ${currentUser.carrera}. El caso debe centrarse EXCLUSIVAMENTE en el siguiente tema del temario:\n\n"${temaSeleccionado}"\n\nCombina la especialidad con doctrina policial (autogestión, seguridad operativa) y administración pública ecuatoriana (LOSNCP, principios generales). 
+
+      IMPORTANTE: 
+      - NO inventes números de artículos de la LOSNCP, ni números de normas INEN, ni códigos específicos que no puedas verificar. 
+      - Si necesitas hacer referencia a una norma, indica cómo se aplicaría en la práctica, por ejemplo: "según la normativa INEN aplicable a sistemas de filtración (se debe consultar el catálogo actualizado del INEN)" o "de acuerdo con los principios de la LOSNCP (transparencia, eficiencia), se sugiere un procedimiento de menor cuantía." 
+      - No proporciones números de artículos a menos que estés absolutamente seguro de que existen y son correctos (si no, omítelos y describe la lógica). 
+      - Enfatiza la doctrina policial de autogestión y seguridad operativa en la operación y mantenimiento de la infraestructura o equipo. 
+      - Si no recuerdas un dato exacto, di que se debe consultar la fuente oficial.
+
+      Proporciona un contexto operacional realista, 3 preguntas técnicas y la respuesta técnica detallada (máx. 500 palabras). Devuelve JSON con: "enunciado", "preguntas" (array de strings), "solucion". Solo JSON.`;
 
       const response = await callDeepSeek([
-        { role: 'system', content: 'Responde SOLO con un objeto JSON válido, sin texto adicional.' },
+        { role: 'system', content: 'Responde SOLO con un objeto JSON válido, sin texto adicional. No alucines números de leyes o normas. Si no sabes un número exacto, describe el procedimiento o di que debe consultarse la normativa vigente.' },
         { role: 'user', content: prompt }
       ], 0.5, 20000);
 
@@ -491,7 +500,7 @@
       const firstBrace = jsonStr.indexOf('{');
       if (firstBrace > 0) jsonStr = jsonStr.substring(firstBrace);
 
-      function sanitizeJSON(str) { /* misma función que antes */ 
+      function sanitizeJSON(str) {
         let result = '', inString = false, escaped = false;
         for (let i = 0; i < str.length; i++) {
           const c = str[i];
@@ -514,6 +523,7 @@
         displayCase(caseData);
       } else throw new Error('JSON inválido');
     } catch (e) {
+      console.error(e);
       document.getElementById('caseContent').innerHTML = `<p>Error al generar caso con IA. ${e.message}</p>`;
       currentCase = null;
     } finally {
@@ -521,7 +531,7 @@
     }
   }
 
-  // ==================== RESPUESTA MODELO Y EVALUACIÓN ====================
+  // ==================== RESPUESTA MODELO Y EVALUACIÓN (ANTI-HALUCINACIONES) ====================
   function showModelAnswer() {
     if (!currentCase) { alert('Primero debe crear un caso práctico.'); return; }
     document.getElementById('modelAnswerContent').innerHTML = `<pre>${currentCase.solucion}</pre>`;
@@ -539,9 +549,30 @@
     document.getElementById('feedbackLoading').style.display = 'block';
     document.getElementById('feedbackBox').style.display = 'none';
     try {
-      const prompt = `Eres un instructor experto de la Policía Nacional. Evalúa la respuesta del aspirante a especialista en ${currentUser.carrera}.\n\nCaso:\n${currentCase.enunciado}\n\nPreguntas:\n${currentCase.preguntas.join('\n')}\n\nRespuesta modelo:\n${currentCase.solucion}\n\nRespuesta del aspirante:\n${userText}\n\nSeñala aciertos y errores concretos, tono constructivo. Sugiere qué temas repasar. Máx 500 palabras.`;
+      const prompt = `Eres un instructor experto de la Policía Nacional. Evalúa la respuesta del aspirante a especialista en ${currentUser.carrera}. 
+
+      Caso:
+      ${currentCase.enunciado}
+
+      Preguntas:
+      ${currentCase.preguntas.join('\n')}
+
+      Respuesta modelo (de referencia):
+      ${currentCase.solucion}
+
+      Respuesta del aspirante:
+      ${userText}
+
+      INSTRUCCIONES PARA LA EVALUACIÓN:
+      - Señala aciertos y errores concretos, con tono constructivo.
+      - Si el aspirante cita un número de artículo, norma INEN o código que no existe o no corresponde, indícalo claramente y sugiere no inventar referencias. 
+      - No inventes ni alucines tú tampoco números de leyes o normas. Si necesitas hacer referencia, usa frases como "de acuerdo con la LOSNCP vigente" o "la normativa técnica aplicable INEN para ...".
+      - Sugiere temas a repasar basados en el temario oficial.
+      - Incorpora la doctrina policial (autogestión, seguridad operativa) en la retroalimentación cuando sea relevante.
+      - Máximo 500 palabras.`;
+
       const feedback = await callDeepSeek([
-        { role: 'system', content: 'Eres un instructor evaluador. Responde texto claro.' },
+        { role: 'system', content: 'Eres un instructor evaluador. No alucines números de leyes, artículos o normas. Si no conoces un número exacto, describe el principio. Sé constructivo y didáctico.' },
         { role: 'user', content: prompt }
       ], 0.7, 3000);
       document.getElementById('feedbackContent').innerHTML = `<pre style="white-space: pre-wrap;">${feedback}</pre>`;
@@ -580,7 +611,7 @@
     if (event.target === modal) modal.style.display = 'none';
   }
 
-  // ==================== LLAMADA A DEEPSEEK (sin cambios) ====================
+  // ==================== LLAMADA A DEEPSEEK ====================
   async function callDeepSeek(messages, temperature = 0.7, maxTokens = 2000) {
     const resp = await fetch(API_URL, {
       method: 'POST',
